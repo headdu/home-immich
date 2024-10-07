@@ -14,8 +14,8 @@ services:
     env_file:
       - stack.env
     depends_on:
-      - redis
-      - database
+      - redis-1
+      - database-1
 
     restart: always
 
