@@ -14,7 +14,7 @@ services:
     env_file:
       - stack.env
     depends_on:
-      - redis-1
+      - immich-redis
       - database-1
 
     restart: always
@@ -31,8 +31,8 @@ services:
       - stack.env
     restart: always
 
-  redis-1:
-    container_name: immich_redis
+  immich-redis:
+    container_name: immich-redis
     image: redis:6.2-alpine@sha256:70a7a5b641117670beae0d80658430853896b5ef269ccf00d1827427e3263fa3
     restart: always
 
