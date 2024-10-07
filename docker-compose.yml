@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   immich-server:
-    container_name: immich_server
+    container_name: immich_server_1
     image: ghcr.io/immich-app/immich-server:${IMMICH_VERSION:-release}
     ports:
       - 2283:3001
@@ -22,7 +22,7 @@ services:
 
 
   immich-machine-learning:
-    container_name: immich_machine_learning
+    container_name: immich_machine_learning_1
     image: ghcr.io/immich-app/immich-machine-learning:${IMMICH_VERSION:-release}
     volumes:
 
@@ -32,12 +32,12 @@ services:
     restart: always
 
   redis:
-    container_name: immich_redis
+    container_name: immich_redis_1
     image: redis:6.2-alpine@sha256:70a7a5b641117670beae0d80658430853896b5ef269ccf00d1827427e3263fa3
     restart: always
 
   database:
-    container_name: immich_postgres
+    container_name: immich_postgres_1
     image: tensorchord/pgvecto-rs:pg14-v0.2.0@sha256:90724186f0a3517cf6914295b5ab410db9ce23190a2d9d0b9dd6463e3fa298f0
     env_file:
       - stack.env
