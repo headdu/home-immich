@@ -5,7 +5,7 @@ services:
     container_name: immich_server_1
     image: ghcr.io/immich-app/immich-server:${IMMICH_VERSION:-release}
     ports:
-      - 2283:3001
+      - 2283:2283
     volumes:
       - type: bind
         source: ${UPLOAD_LOCATION}
