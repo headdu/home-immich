@@ -10,7 +10,8 @@ services:
       - type: bind
         source: ${UPLOAD_LOCATION}
         target: /usr/src/app/upload
-      - /home/eduardo/Documents/para_incluir:/usr/src/app/old_backup
+        bind:
+          create_host_path: false
     env_file:
       - stack.env
     depends_on:
